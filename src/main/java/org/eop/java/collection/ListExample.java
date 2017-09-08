@@ -11,6 +11,7 @@ public class ListExample {
 		arrayList();
 		System.out.println();
 		linkedList();
+		System.out.println();
 	}
 
 	public static void arrayList() {
