@@ -1,6 +1,7 @@
 package org.eop.java.collection;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.NavigableSet;
 import java.util.Random;
 import java.util.Set;
@@ -12,11 +13,34 @@ public class SetExample {
 	public static void main(String[] args) {
 		hashSet();
 		System.out.println("==============================");
+		linkedHashSet();
+		System.out.println("==============================");
 		treeSet();
 	}
 
 	public static void hashSet() {
 		Set<Integer> set = new HashSet<>();
+		Random r = new Random();
+		for (int i = 0; i < 100; i++) {
+			set.add(r.nextInt(100));
+		}
+		
+		System.out.println("size=" + set.size());
+		System.out.println("empty=" + set.isEmpty());
+		System.out.println("contains=" + set.contains(55));
+		
+		System.out.println();
+		
+		for (Integer s : set) {
+			System.out.print(s);
+			System.out.print(",");
+		}
+		System.out.println();
+		
+	}
+	
+	public static void linkedHashSet() {
+		Set<Integer> set = new LinkedHashSet<>();
 		Random r = new Random();
 		for (int i = 0; i < 100; i++) {
 			set.add(r.nextInt(100));
