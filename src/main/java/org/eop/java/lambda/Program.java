@@ -63,6 +63,11 @@ public class Program {
 	public static void main(String[] args) {
 		Program p = new Program();
         p.testFunctionalInterface();
+        System.out.println(p.fb.getClass().getName());
+        System.out.println(p.fb.getClass().isAnonymousClass());
+        System.out.println(p.fb.getClass().getInterfaces()[0].getName());
+        System.out.println(p.fb instanceof Consumer);
+        System.out.println(p.fb.getClass().isSynthetic());
         //foo: 1
         //bar: 2
         p.testFunctionalInterface(p::foo, 1);
@@ -71,6 +76,11 @@ public class Program {
         //bar: 2
 
         p.testLambda();
+        System.out.println(p.fb.getClass().getName());
+        System.out.println(p.fb.getClass().isAnonymousClass());
+        System.out.println(p.fb.getClass().getInterfaces()[0].getName());
+        System.out.println(p.fb instanceof Consumer);
+        System.out.println(p.fb.getClass().isSynthetic());
         //lambda 1: 1
         //lambda 2: 2
         p.testLambda((Integer a) -> System.out.println("lambda 1: " + a), 1);
@@ -79,6 +89,11 @@ public class Program {
         //lambda 2: 2
 
         p.testAnonymousClass();
+        System.out.println(p.fb.getClass().getName());
+        System.out.println(p.fb.getClass().isAnonymousClass());
+        System.out.println(p.fb.getClass().getInterfaces()[0].getName());
+        System.out.println(p.fb instanceof Consumer);
+        System.out.println(p.fb.getClass().isSynthetic());
         //anonymous class: 1
         //anonymous class: 2
         p.testAnonymousClass(new Consumer<Integer>() {
